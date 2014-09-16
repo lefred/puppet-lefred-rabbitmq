@@ -8,8 +8,8 @@ class rabbitmq::packages {
                 $rabbitmq_server_bin = "rabbitmq-server"
                 package {
                   $packs:
-                    $require,
-                    ensure => "installed";
+                    require => $require,
+                    ensure  => "installed";
                 } 
                 
           }
