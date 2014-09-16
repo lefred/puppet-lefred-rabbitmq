@@ -6,8 +6,7 @@ class rabbitmq::config {
                 source => [
                             "puppet:///modules/rabbitmq/$hostname/rabbitmq.config",                            
                             "puppet:///modules/rabbitmq/rabbitmq.config"
-                          ],
-                notify => Service['rabbitmq-server']
+                          ]
   } 
   
   file {
