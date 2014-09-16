@@ -7,7 +7,7 @@ class rabbitmq::config::sensu ($rabbitmq_sensu_password="fred") {
         logoutput => true,
         unless    => "rabbitmqctl list_vhosts | grep '/sensu' > /dev/null",
         path      => '/usr/sbin:/bin:/usr/local/sbin:/usr/bin:/usr/local/bin',
-        require   => Service['rabbitmq-server'];
+        require   => Class['rabbitmq::config'];
     'add_user_sensu':
         command   => "rabbitmqctl add_user sensu $rabbitmq_sensu_password",
         logoutput => true,
