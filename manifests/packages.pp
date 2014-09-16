@@ -1,9 +1,10 @@
 class rabbitmq::packages {
-  
+
+  $packs   = "rabbitmq-server"
+   
   case $::osfamily {
           'RedHat': {
                 $require = Yumrepo['epel']
-                $packs   = "rabbitmq-server"
                 $rabbitmq_server_bin = "rabbitmq-server"
           }
           'Debian': {
