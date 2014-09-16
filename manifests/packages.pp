@@ -8,7 +8,7 @@ class rabbitmq::packages {
                 $rabbitmq_server_bin = "rabbitmq-server"
           }
           'Debian': {
-                $require = undef
+                $require = ""
                 $rabbitmq_server_bin = "rabbitmq-server"
           }
   }
